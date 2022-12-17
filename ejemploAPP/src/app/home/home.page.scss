@@ -25,3 +25,32 @@
 #container a {
   text-decoration: none;
 }
+
+
+// SI LA PANTALLA MIDE MÍNIMO 200PX SU FONDO CAMBIARÁ A COLOR AZUL
+@media only screen and (min-width: 200px){
+  .fondo {
+    --background: blue;
+  }
+}
+
+// SI LA PANTALLA MIDE MÍNIMO 400PX SU FONDO CAMBIARÁ A COLOR ROJO
+@media only screen and (min-width: 400px){
+  .fondo {
+    --background: red;
+  }
+}
+
+// SI LA PANTALLA MIDE MÍNIMO 400PX SU FONDO CAMBIARÁ A COLOR ROJO
+@media only screen and (min-width: 600px){
+  .fondo {
+    --background: green;
+  }
+}
+
+// SI LA PANTALLA CAMBIA DE ORIENTACIÓN EL TITULO DESAPARECE
+@media (orientation: landscape){
+  .titulo {
+    display: none;
+  }
+}

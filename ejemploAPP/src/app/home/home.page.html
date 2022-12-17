@@ -1,18 +1,15 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
+    <ion-title class="titulo">
       Comprobar numero par e impar
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content class="fondo" [fullscreen]="true">
   <div class="ion-padding">
-    <ion-input type="number" [(ngModel)]="num" placeholder="Introduce un numero">
-    </ion-input> 
+    <ion-input type="number" [(ngModel)]="num" placeholder="Introduce un numero"></ion-input> 
     <p>El numero es {{ mensaje }}</p>
     <ion-button expand="block" (click)="compruebaNumero()">Comprobar</ion-button>
   </div>
-
-  
 </ion-content>

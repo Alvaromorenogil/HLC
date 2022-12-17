@@ -1,0 +1,75 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Listado de Coches
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-card>Selecciona el método de filtrado:</ion-card>
+  <ion-list>
+    <ion-radio-group value="marca" (ionChange)="onRadioValueChanged($event)">
+      <ion-item>
+        <ion-label>Marca</ion-label>
+        <ion-radio slot="start" value="marca"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Modelo</ion-label>
+        <ion-radio slot="start" value="modelo"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Año</ion-label>
+        <ion-radio slot="start" value="año"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+
+  <ion-input id="filtro" [(ngModel)]="filtro" placeholder="Escribe aquí para buscar..."></ion-input>
+
+  <ion-grid>
+    <!-- MARCA -->
+    <ion-row *ngIf="criterioFiltro=='marca'">
+      <ng-container *ngFor="let car of cars | async">
+        <ion-col *ngIf="filtro=='' || car.marca.startsWith(filtro)" size-xl="3" size-lg="3" size-md="4" size-sm="6"
+          size-xs="12">
+          <ion-card>
+            <ion-card-content>
+              <h1>{{ car.marca}}</h1>
+              <h2><b>Modelo:</b> {{ car.modelo }}</h2>
+              <h2><b>Año: </b>{{ car.año }}</h2>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ng-container>
+    </ion-row>
+    <!-- MODELO -->
+    <ion-row *ngIf="criterioFiltro=='modelo'">
+      <ng-container *ngFor="let car of cars | async">
+        <ion-col *ngIf="filtro=='' || car.modelo.startsWith(filtro)" size-xl="3" size-lg="3" size-md="4" size-sm="6" size-xs="12">
+          <ion-card>
+            <ion-card-content>
+              <h1>{{ car.marca}}</h1>
+              <h2><b>Modelo:</b> {{ car.modelo }}</h2>             
+              <h2><b>Año: </b>{{ car.año }}</h2>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ng-container>
+    </ion-row>
+    <!-- AÑO -->
+    <ion-row *ngIf="criterioFiltro=='año'">
+      <ng-container *ngFor="let car of cars | async">
+        <ion-col *ngIf="filtro=='' || car.año.startsWith(filtro)" size-xl="3" size-lg="3" size-md="4" size-sm="6" size-xs="12">
+          <ion-card>
+            <ion-card-content>
+              <h1>{{ car.marca}}</h1>
+              <h2><b>Modelo:</b> {{ car.modelo }}</h2>              
+              <h2><b>Año: </b>{{ car.año }}</h2>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ng-container>
+    </ion-row>
+
+  </ion-grid>
+</ion-content>
