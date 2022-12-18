@@ -7,7 +7,6 @@ import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 
 import { HttpClientModule } from '@angular/common/http';
-
 @NgModule({
   imports: [
     CommonModule,
@@ -18,4 +17,4 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   declarations: [HomePage]
 })
-export class HomePageModule {}
+export class HomePageModule {}

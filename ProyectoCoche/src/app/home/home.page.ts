@@ -20,7 +20,6 @@ export class HomePage {
   }
 
   constructor(private httpClient: HttpClient) {
-    this.cars = this.httpClient.get('https://raw.githubusercontent.com/sergiomateos2daw/ProyectoPeliculas/master/car.json');
+    this.cars = this.httpClient.get('https://raw.githubusercontent.com/Alvaromorenogil/ProyectoCoches/master/car.json');
   }
-    
 }
