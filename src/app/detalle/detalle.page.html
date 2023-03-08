@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Detalles del Coche</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <img *ngIf="(!this.nueva)" alt="{{document.data.marca}}" src="{{document.data.Imagen}}" width="300" height="400"/>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-card-title>Marca:<ion-input [(ngModel)]="document.data.marca"></ion-input></ion-card-title>
+      <ion-card-title>Modelo:<ion-input [(ngModel)]="document.data.modelo"></ion-input></ion-card-title>      
+    </ion-card-content>
+  </ion-card>
+  <ion-content>
+  <ion-button class="volver" (click)="clickBotonVolver()">Volver</ion-button>
+  <ion-button (click)="clickBotonInsertar()" *ngIf="(this.nueva)">Insertar</ion-button>
+  <ion-button (click)="clickBotonModificar()" *ngIf="(!this.nueva)">Modificar</ion-button>
+  <ion-button (click)="uploadImagePicker()" >Examinar</ion-button>
+  <!-- <ion-button (click)="compartir()" *ngIf="(!this.nueva)">Compartir</ion-button> -->
+  <ion-button (click)="presentAlert()" *ngIf="(!this.nueva)">Borrar</ion-button>
+</ion-content>
+
+<ion-toolbar>
+  <ion-tabs id="tab">
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="home">
+        <ion-icon name="home" id="icons"></ion-icon>
+        <ion-label>Inicio</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="info">
+        <ion-icon name="information-circle" id="icons"></ion-icon>
+        <ion-label>Sobre la App</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-toolbar>

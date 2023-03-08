@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Coches
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+
+  <!-- Botones -->
+  <ion-fab-button (click)="selecCoche(false)" class="añadir">+</ion-fab-button>
+  <ion-fab-button (click)="llamar()" class="llamada"><ion-icon name="call"></ion-icon></ion-fab-button>
+  <ion-fab-button (click)="compartir()" class="share"><ion-icon name="share"></ion-icon>
+  </ion-fab-button>
+
+  <h1 id="h1">Lista de Coches</h1>
+  <ion-grid> 
+    <ion-row>
+      <ion-col *ngFor="let documentCoche of arrayColeccionCoches" (click)="selecCoche(documentCoche)"
+      size="12" size-md="4" size-lg="3">
+        <ion-card>
+          <img alt="{{documentCoche.data.marca}}" src="{{documentCoche.data.Imagen}}" width="100%"/>
+          <ion-card-header>
+            <ion-card-title>{{ documentCoche.data.marca }}</ion-card-title>
+            <ion-card-subtitle>{{ documentCoche.data.modelo }}</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+
+<ion-toolbar>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="home">
+        <ion-icon name="home" id="icons"></ion-icon>
+        <ion-label>Inicio</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="info">
+        <ion-icon name="information-circle" id="icons"></ion-icon>
+        <ion-label>Sobre la App</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-toolbar>

@@ -1,0 +1,51 @@
+ion-card{
+  --background: white;
+
+}
+ion-title,h1{
+font-weight: bold;
+color: black;
+font-size: 30px;
+padding-left: 1%;
+}
+
+ion-card-title{
+  
+  color: lightblue;
+}
+
+ion-input{
+  background-color: lightgray;
+  color: black;
+  border-radius: 5px;
+  font-weight: initial;
+}
+
+// header
+ion-toolbar,ion-title,ion-header{
+  --background: lightblue;
+  color: white;
+}
+
+ion-button{
+--background: lightblue;
+}
+
+@media (orientation: landscape) {
+  ion-card{
+      display: flex;
+      gap: 30px;
+
+  }
+  ion-card-content{
+      padding-top: 10px;
+  }
+
+  ion-input{
+      width: 400px;
+  }
+}
+
+#icons{
+  color: lightblue;
+}

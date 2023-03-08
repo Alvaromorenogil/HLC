@@ -1,0 +1,79 @@
+#container {
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+  color: lightgray;
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+
+.añadir{ 
+  margin-bottom: 50px;
+  font-size: 300%;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  --background: lightblue;
+}
+
+.llamada{ 
+  margin-bottom: 50px;
+  margin-right: 10px;
+  font-size: 300%;
+  position: fixed;
+  bottom: 20px;
+  right: 80px;
+  --background: lightblue;
+}
+
+.share{
+  margin-bottom: 50px;
+  margin-right: 10px;
+  font-size: 300%;
+  position: fixed;
+  bottom: 20px;
+  right: 150px;
+  --background: lightblue;
+}
+
+ion-content{
+  --background: white;
+}
+
+ion-toolbar{
+  --background: lightblue;
+}
+
+ion-title,h1:nth-child(0),h1:nth-child(1){
+  font-weight: bold;
+  color: white;
+  font-size: 30px;
+}
+
+h1{
+  padding-left: 1%;
+}
+
+#h1{
+  color: lightblue;
+}
+
+#icons{
+  color: lightblue;
+}
