@@ -5,29 +5,30 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content [fullscreen]="true">
 
+<ion-content [fullscreen]="true">
   <!-- Botones -->
   <ion-fab-button (click)="selecCoche(false)" class="añadir">+</ion-fab-button>
   <ion-fab-button (click)="llamar()" class="llamada"><ion-icon name="call"></ion-icon></ion-fab-button>
-  <ion-fab-button (click)="compartir()" class="share"><ion-icon name="share"></ion-icon>
-  </ion-fab-button>
+  <ion-fab-button (click)="compartir()" class="share"><ion-icon name="share"></ion-icon></ion-fab-button>
 
-  <h1 id="h1">Lista de Coches</h1>
-  <ion-grid> 
-    <ion-row>
-      <ion-col *ngFor="let documentCoche of arrayColeccionCoches" (click)="selecCoche(documentCoche)"
-      size="12" size-md="4" size-lg="3">
-        <ion-card>
-          <img alt="{{documentCoche.data.marca}}" src="{{documentCoche.data.Imagen}}" width="100%"/>
-          <ion-card-header>
-            <ion-card-title>{{ documentCoche.data.marca }}</ion-card-title>
-            <ion-card-subtitle>{{ documentCoche.data.modelo }}</ion-card-subtitle>
-          </ion-card-header>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  <div id="coches-container">
+    <h1 id="h1">Lista de Coches</h1>
+    <ion-grid> 
+      <ion-row>
+        <ion-col *ngFor="let documentCoche of arrayColeccionCoches" (click)="selecCoche(documentCoche)"
+          size="12" size-md="4" size-lg="3">
+          <ion-card>
+            <img alt="{{documentCoche.data.marca}}" src="{{documentCoche.data.Imagen}}" width="100%"/>
+            <ion-card-header>
+              <ion-card-title>{{ documentCoche.data.marca }}</ion-card-title>
+              <ion-card-subtitle>{{ documentCoche.data.modelo }}</ion-card-subtitle>
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
 
 </ion-content>
 
